@@ -1,0 +1,29 @@
+node1:
+  #image: ernespn/fsharp-calculator:node1
+  build: ./fsharp-calculator
+  expose:
+    - 8083
+  ports:
+    - "8083:8083"
+
+node2:
+  #image: ernespn/python-calculator:node2
+  build: ./python-calculator
+  expose:
+    - 8084
+  ports:
+    - "8084:8084"
+
+nginx:
+  #image: ernespn/nginx
+  build: ./nginx
+  links:
+   - node1:node1
+   - node2:node2
+  ports:
+   - "80:80"
+   #- "70:70"
+
+  expose:
+   - "80"
+  # - "70"

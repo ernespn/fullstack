@@ -1,0 +1,9 @@
+[submodule "pythonservices"]
+	path = pythonservices
+	url = git@bitbucket.org:ernespn/pythonservices.git
+[submodule "fsharp-calculator"]
+	path = fsharp-calculator
+	url = git@github.com:ernespn/fsharp-calculator.git
+[submodule "python-calculator"]
+	path = python-calculator
+	url = git@github.com:ernespn/python-calculator.git
