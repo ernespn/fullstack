@@ -7,3 +7,6 @@
 [submodule "python-calculator"]
 	path = python-calculator
 	url = git@github.com:ernespn/python-calculator.git
+[submodule "csharp-calculator"]
+	path = csharp-calculator
+	url = git@github.com:ernespn/csharp-calculator.git

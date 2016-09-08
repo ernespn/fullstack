@@ -14,12 +14,23 @@ node2:
   ports:
     - "8084:8084"
 
+node3:
+  #image: ernespn/csharp-calculator:node3
+  build: ./csharp-calculator
+  expose:
+    - 8085
+  ports:
+    - "8085:8085"
+  tty: true
+
+
 nginx:
   #image: ernespn/nginx
   build: ./nginx
   links:
    - node1:node1
    - node2:node2
+   - node3:node3
   ports:
    - "80:80"
    #- "70:70"
