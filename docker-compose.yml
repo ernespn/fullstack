@@ -32,6 +32,14 @@ node4:
     - "8082:8082"
 
 
+node5:
+  #image: ernespn/spring-calculator:node5
+  build: ./spring-calculator
+  expose:
+    - 8081
+  ports:
+    - "8081:8081"
+
 nginx:
   #image: ernespn/nginx
   build: ./nginx
@@ -40,6 +48,7 @@ nginx:
    - node2:node2
    - node3:node3
    - node4:node4
+   - node5:node5
   ports:
    - "80:80"
    #- "70:70"

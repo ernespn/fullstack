@@ -13,3 +13,6 @@
 [submodule "nodejs-calculator"]
 	path = nodejs-calculator
 	url = git@github.com:ernespn/nodejs-calculator.git
+[submodule "spring-calculator"]
+	path = spring-calculator
+	url = git@github.com:ernespn/spring-calculator.git
