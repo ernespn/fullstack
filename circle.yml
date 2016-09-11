@@ -1,0 +1,11 @@
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
+
+dependencies:
+  pre:
+    - sudo pip install docker-compose
+  post:
+    - docker-compose -f production.yml up -d

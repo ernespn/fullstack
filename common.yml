@@ -1,0 +1,43 @@
+node1:
+  expose:
+    - 8083
+  ports:
+    - "8083:8083"
+
+node2:
+  expose:
+    - 8084
+  ports:
+    - "8084:8084"
+
+node3:
+  expose:
+    - 8085
+  ports:
+    - "8085:8085"
+  tty: true
+
+node4:
+  expose:
+    - 8082
+  ports:
+    - "8082:8082"
+
+node5:
+  expose:
+    - 8081
+  ports:
+    - "8081:8081"
+
+nginx:
+  links:
+   - node1:node1
+   - node2:node2
+   - node3:node3
+   - node4:node4
+   - node5:node5
+  ports:
+   - "80:80"
+
+  expose:
+   - "80"

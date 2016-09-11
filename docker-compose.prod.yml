@@ -1,0 +1,33 @@
+node1:
+  extends:
+    file: common.yml
+    service: node1
+  image: ernespn/fsharp-calculator:node1
+
+node2:
+  extends:
+    file: common.yml
+    service: node2
+  image: ernespn/python-calculator:node2
+
+node3:
+  extends:
+    file: common.yml
+    service: node3
+  image: ernespn/csharp-calculator:node3
+
+node4:
+  extends:
+    file: common.yml
+    service: node4
+  image: ernespn/nodejs-calculator:node4
+
+node5:
+  extends:
+    file: common.yml
+    service: node5
+  image: ernespn/spring-calculator:node5
+
+nginx:
+  #image: ernespn/nginx
+  build: ./nginx
