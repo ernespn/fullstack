@@ -16,9 +16,6 @@
 [submodule "spring-calculator"]
 	path = spring-calculator
 	url = git@github.com:ernespn/spring-calculator.git
-[submodule "nginx"]
-	path = nginx
-	url = git@github.com:ernespn/nginx.git
 [submodule "personal-website"]
 	path = personal-website
 	url = git@github.com:ernespn/personal-website.git
