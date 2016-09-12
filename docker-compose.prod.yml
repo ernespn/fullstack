@@ -29,5 +29,4 @@ node5:
   image: ernespn/spring-calculator:node5
 
 nginx:
-  #image: ernespn/nginx
-  build: ./nginx
+  image: ernespn/nginx
