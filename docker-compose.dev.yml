@@ -28,5 +28,8 @@ node5:
     service: node5
   build: ./spring-calculator
 
-nginx:
-  build: ./nginx
+#node6:
+#  extends:
+#    file: common.yml
+#    service: node6
+#  build: ./personal-website

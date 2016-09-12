@@ -28,5 +28,11 @@ node5:
     service: node5
   image: ernespn/spring-calculator:node5
 
+website:
+  extends:
+    file: common.yml
+    service: website
+  image: ernespn/personal-website
+
 nginx:
   image: ernespn/nginx

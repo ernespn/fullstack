@@ -29,6 +29,12 @@ node5:
   ports:
     - "8081:8081"
 
+#node6:
+#  expose:
+#    - 9000
+#  ports:
+#    - "9000:9000"
+
 nginx:
   links:
    - node1:node1
@@ -36,8 +42,12 @@ nginx:
    - node3:node3
    - node4:node4
    - node5:node5
+   #- node6:node6
+  build: ./nginx
   ports:
    - "80:80"
+   - "9000:9000"
 
   expose:
    - "80"
+   - "9000"
