@@ -19,3 +19,6 @@
 [submodule "nginx"]
 	path = nginx
 	url = git@github.com:ernespn/nginx.git
+[submodule "personal-website"]
+	path = personal-website
+	url = git@github.com:ernespn/personal-website.git

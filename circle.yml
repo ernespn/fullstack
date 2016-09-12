@@ -8,4 +8,4 @@ dependencies:
   pre:
     - sudo pip install docker-compose
   post:
-    - docker-compose -f production.yml up -d
+    - docker-compose -f docker-compose.prod.yml up -d
