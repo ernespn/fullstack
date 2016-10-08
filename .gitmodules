@@ -10,12 +10,6 @@
 [submodule "csharp-calculator"]
 	path = csharp-calculator
 	url = git@github.com:ernespn/csharp-calculator.git
-[submodule "nodejs-calculator"]
-	path = nodejs-calculator
-	url = git@github.com:ernespn/nodejs-calculator.git
-[submodule "spring-calculator"]
-	path = spring-calculator
-	url = git@github.com:ernespn/spring-calculator.git
 [submodule "personal-website"]
 	path = personal-website
 	url = git@github.com:ernespn/personal-website.git
