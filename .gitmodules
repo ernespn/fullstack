@@ -13,3 +13,6 @@
 [submodule "personal-website"]
 	path = personal-website
 	url = git@github.com:ernespn/personal-website.git
+[submodule "spring-services"]
+	path = spring-services
+	url = git@github.com:ernespn/spring-services.git
