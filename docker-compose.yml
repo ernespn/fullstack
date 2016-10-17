@@ -1,58 +1,62 @@
 node1:
-  #image: ernespn/fsharp-calculator:node1
+  extends:
+    file: common.yml
+    service: node1
   build: ./fsharp-calculator
-  expose:
-    - 8083
-  ports:
-    - "8083:8083"
 
 node2:
-  #image: ernespn/python-calculator:node2
+  extends:
+    file: common.yml
+    service: node2
   build: ./python-calculator
-  expose:
-    - 8084
-  ports:
-    - "8084:8084"
 
 node3:
-  #image: ernespn/csharp-calculator:node3
+  extends:
+    file: common.yml
+    service: node3
   build: ./csharp-calculator
-  expose:
-    - 8085
-  ports:
-    - "8085:8085"
-  tty: true
+  links:
+   - mongodb
 
 node4:
-  #image: ernespn/nodejs-calculator:node4
+  extends:
+    file: common.yml
+    service: node4
   build: ./nodejs-calculator
-  expose:
-    - 8082
-  ports:
-    - "8082:8082"
-
 
 node5:
-  #image: ernespn/spring-calculator:node5
-  build: ./spring-calculator
-  expose:
-    - 8081
-  ports:
-    - "8081:8081"
+  extends:
+    file: common.yml
+    service: node5
+  build: ./spring-services
+  links:
+   - mongodb
+
+website:
+  extends:
+    file: common.yml
+    service: website
+  build: ./personal-website
+
+mongodb:
+  extends:    
+    file: common.yml
+    service: mongodb
+  build: ./mongodb
 
 nginx:
-  #image: ernespn/nginx
-  build: ./nginx
   links:
    - node1:node1
    - node2:node2
    - node3:node3
    - node4:node4
    - node5:node5
+   - website:website
+  build: ./nginx
   ports:
+   - "8080:8080"
    - "80:80"
-   #- "70:70"
 
   expose:
+   - "8080"
    - "80"
-  # - "70"

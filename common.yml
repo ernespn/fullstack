@@ -34,3 +34,9 @@ website:
     - 9000
   ports:
     - "9000:9000"
+
+mongodb:
+  expose:
+   - 27017
+  ports:
+  - "27017:27017"

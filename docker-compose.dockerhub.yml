@@ -26,7 +26,7 @@ node5:
   extends:
     file: common.yml
     service: node5
-  image: ernespn/spring-calculator:node5
+  image: ernespn/spring-services:node5
 
 website:
   extends:
