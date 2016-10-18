@@ -39,10 +39,10 @@ website:
   build: ./personal-website
 
 mongodb:
-  extends:    
+  extends:
     file: common.yml
     service: mongodb
-  build: ./mongodb
+  image: mongo:3.3.15
 
 nginx:
   links:
