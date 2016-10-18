@@ -1,18 +1,21 @@
 [submodule "pythonservices"]
 	path = pythonservices
-	url = git@bitbucket.org:ernespn/pythonservices.git
+	url = https://github.com/ernespn/pythonservices.git
 [submodule "fsharp-calculator"]
 	path = fsharp-calculator
-	url = git@github.com:ernespn/fsharp-calculator.git
+	url = https://github.com/ernespn/fsharp-calculator.git
 [submodule "python-calculator"]
 	path = python-calculator
-	url = git@github.com:ernespn/python-calculator.git
+	url = https://github.com/ernespn/python-calculator.git
 [submodule "csharp-calculator"]
 	path = csharp-calculator
-	url = git@github.com:ernespn/csharp-calculator.git
+	url = https://github.com/ernespn/csharp-calculator.git
 [submodule "personal-website"]
 	path = personal-website
-	url = git@github.com:ernespn/personal-website.git
+	url = https://github.com/ernespn/personal-website.git
 [submodule "spring-services"]
 	path = spring-services
-	url = git@github.com:ernespn/spring-services.git
+	url = https://github.com/ernespn/spring-services.git
+[submodule "nodejs-calculator"]
+	path = nodejs-calculator
+	url = https://github.com/ernespn/nodejs-calculator.git
