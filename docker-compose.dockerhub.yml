@@ -1,51 +1,91 @@
 node1:
-  extends:
-    file: common.yml
-    service: node1
-  image: ernespn/fsharp-calculator:node1
+  autoredeploy: true
+  expose:
+    - 8083
+  ports:
+    - "8083:8083"
+  image: ernespn/fsharp-calculator
+  tags: 
+    - prod
 
 node2:
-  extends:
-    file: common.yml
-    service: node2
-  image: ernespn/python-calculator:node2
+  autoredeploy: true
+  expose:
+    - 8084
+  ports:
+    - "8084:8084"
+  image: ernespn/python-calculator
+  tags: 
+    - prod
 
 node3:
-  extends:
-    file: common.yml
-    service: node3
-  image: ernespn/csharp-calculator:node3
+  autoredeploy: true
+  expose:
+    - 8085
+  ports:
+    - "8085:8085"
+  tty: true
+  image: ernespn/csharp-calculator
+  links:
+   - mongodb
+  tags: 
+   - prod
 
 node4:
-  extends:
-    file: common.yml
-    service: node4
-  image: ernespn/nodejs-calculator:node4
+  autoredeploy: true
+  expose:
+    - 8082
+  ports:
+    - "8082:8082"
+  image: ernespn/nodejs-calculator
+  tags: 
+   - prod
 
 node5:
-  extends:
-    file: common.yml
-    service: node5
-  image: ernespn/spring-services:node5
+  autoredeploy: true
+  expose:
+    - 8081
+  ports:
+    - "8081:8081"
+  image: ernespn/spring-services
+  links:
+   - mongodb
+  tags: 
+   - prod
 
 website:
-  extends:
-    file: common.yml
-    service: website
+  autoredeploy: true
+  expose:
+    - 9000
+  ports:
+    - "9000:9000"
   image: ernespn/personal-website
+  tags: 
+   - prod
+
+mongodb:
+   expose:
+   - 27017
+  ports:
+  - "27017:27017"
+  image: mongo:3.3.15
+  tags: 
+   - prod
 
 nginx:
   links:
-   - node1:node1
-   - node2:node2
-   - node3:node3
-   - node4:node4
-   - node5:node5
+   - node1
+   - node2
+   - node3
+   - node4
+   - node5
    - website:website
-  build: ./nginx
+  image: ernespn/lb-nginx
   ports:
    - "8080:8080"
    - "80:80"
   expose:
    - "8080"
    - "80"
+  tags: 
+   - prod
