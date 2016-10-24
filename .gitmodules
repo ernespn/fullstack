@@ -19,3 +19,6 @@
 [submodule "nodejs-calculator"]
 	path = nodejs-calculator
 	url = https://github.com/ernespn/nodejs-calculator.git
+[submodule "lb-nginx"]
+	path = lb-nginx
+	url = https://github.com/ernespn/lb-nginx.git
