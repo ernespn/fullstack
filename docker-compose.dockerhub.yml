@@ -1,77 +1,59 @@
 node1:
-  autoredeploy: true
   expose:
-    - 8083
+    - "8083"
   ports:
     - "8083:8083"
   image: ernespn/fsharp-calculator
-  tags: 
-    - prod
-
+ 
 node2:
-  autoredeploy: true
   expose:
-    - 8084
+    - "8084"
   ports:
     - "8084:8084"
   image: ernespn/python-calculator
-  tags: 
-    - prod
-
+  
 node3:
-  autoredeploy: true
   expose:
-    - 8085
+    - "8085"
   ports:
     - "8085:8085"
   tty: true
   image: ernespn/csharp-calculator
   links:
    - mongodb
-  tags: 
-   - prod
 
 node4:
-  autoredeploy: true
   expose:
-    - 8082
+    - "8082"
   ports:
     - "8082:8082"
   image: ernespn/nodejs-calculator
-  tags: 
-   - prod
-
+  links:
+   - mongodb
+  
 node5:
-  autoredeploy: true
   expose:
-    - 8081
+    - "8081"
   ports:
     - "8081:8081"
   image: ernespn/spring-services
   links:
    - mongodb
-  tags: 
-   - prod
-
+  
 website:
-  autoredeploy: true
   expose:
-    - 9000
+    - "9000"
   ports:
     - "9000:9000"
   image: ernespn/personal-website
-  tags: 
-   - prod
-
+  
 mongodb:
-   expose:
-   - 27017
+  expose:
+   - "27017"
   ports:
   - "27017:27017"
   image: mongo:3.3.15
-  tags: 
-   - prod
-
+  
 nginx:
   links:
    - node1
@@ -79,7 +61,7 @@ nginx:
    - node3
    - node4
    - node5
-   - website:website
+   - website
   image: ernespn/lb-nginx
   ports:
    - "8080:8080"
@@ -87,5 +69,3 @@ nginx:
   expose:
    - "8080"
    - "80"
-  tags: 
-   - prod
