@@ -65,7 +65,9 @@ nginx:
   image: ernespn/lb-nginx
   ports:
    - "8080:8080"
+   - "8070:8070"
    - "80:80"
   expose:
+   - "8070"
    - "8080"
    - "80"
